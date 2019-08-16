@@ -8,6 +8,6 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest, macOS-latest]    
     steps:
-    - uses: sevki/p9builder@latest
+    - uses: actions/checkout@v1
     - name: build ${{ matrix.os }} 
       run: ./INSTALL

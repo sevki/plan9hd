@@ -1,0 +1,13 @@
+name: Plan 9 HD
+on: [push,pull_request]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macOS-latest]    
+    steps:
+    - uses: sevki/p9builder@latest
+    - name: build ${{ matrix.os }} 
+      run: ./INSTALL
